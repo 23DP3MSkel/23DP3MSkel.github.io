@@ -1,0 +1,560 @@
+ @font-face {
+            font-family: "navigation";
+            src: url("../Font/navigation.ttf");
+            font-weight: bold;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial,sans-serif;
+        }
+
+        html {
+            background-color: #006f71;
+            overflow-x:hidden;
+            
+        }
+
+        body {
+            color: #333;
+            padding-top: 80px;
+            background-color: white;
+            overflow-x:hidden;
+            
+            
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #006A71;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 80px;
+            width: auto;
+            margin-top: 2%;
+            filter: drop-shadow(2px 3px 2px rgb(0, 0, 0));
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin-left: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-item {
+            margin-left: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            position: relative;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:not(.download-btn)::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:not(.download-btn):hover {
+            transform: scale(1.1);
+        }
+
+        .nav-link:not(.download-btn):hover::after {
+            width: 80%;
+        }
+
+        .download-btn {
+            background-color: black;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .download-btn:hover {
+            background-color: #333;
+        }
+
+        /* SECTIONS */
+        section {
+            min-height: 100vh;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #home {
+            background: #006A71;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #home a {
+            border-radius: 10px;
+            margin-right: 45%;
+            background-color: rgb(11, 90, 116);
+            color: rgb(235, 235, 235);
+            font-weight: bold;
+            text-decoration: none;
+            font-size: larger;
+            padding: 15px 25px;
+            box-shadow: 2px 2px 3px black;
+        }
+
+        #home a:hover{
+            background-color: rgb(12, 110, 142);
+            color: rgb(255, 255, 255);
+        }
+
+        #details, #features, #pricing {
+            background-color: #ffffff;
+        }
+
+        #about-us{
+            background-color: #e2e2e2;
+            position: relative;
+        }
+        .about-info{
+            margin-right: 50%;
+        }
+        .about-info h2{
+            font-style: italic;
+            font-weight:lighter;
+            font-size: 60px;
+        }
+
+        .about-info p{
+            font-size: 20px;
+            max-width: 600px;
+            line-height: 2;
+            position: relative;
+            text-align: left;
+        }
+
+        .about-info h1{
+            font-size: 50px;
+            position: relative;
+        }
+
+        .about{
+            margin-left: 50%;
+            width: 45%;
+            position: absolute;
+            border-radius: 30px;
+            padding: 20px 0;
+            background-color: #151c1d;
+        }
+
+        .user-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 3px 5px 15px rgba(0, 106, 113, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .user-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .user-box p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .user-box a:hover {
+            color: #00838b;
+            text-decoration: underline;
+        }
+
+        .user-box img {
+            margin-bottom: 15px;
+            max-width: 60px;
+        }
+
+        #user-reviews{
+            background-color: #d1d1d1;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #user-reviews img{
+            opacity: 80%;
+            border-radius: 40px;
+            padding: 3px 3px;
+            background-color: black;
+        }
+        #user-reviews div h1{
+            font-size: 60px;
+            color: black;    
+        }
+        .infoDIV{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #user-reviewsh1{
+            position: relative;
+            top: -50px;
+            font-size: 60px;
+        }
+
+        #img1, #img2{
+            display: none;
+        }
+        #download {
+            background-color: #f0f0f0;
+        }
+
+        #download h1{
+            font-size: 60px;
+            padding-bottom: 100px;
+            position:relative
+        }
+
+        #hero-text {
+            margin-bottom: 20px;
+            margin-right: 45%;
+            color: #006A71;
+            text-shadow: 2px 2px 2px black;
+        }
+
+        #home h2 {
+            color: white;
+            font-size: 3rem;
+        }
+
+        #home p {
+            max-width: 800px;
+            margin-bottom: 30px;
+            margin-right: 45%;
+        }
+
+        .iphone {
+            margin-left: 50%;
+            padding-bottom: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            filter: drop-shadow(1px 1px 50px rgb(5, 154, 159));
+            max-width: 40%;
+        }
+
+        .big-download-btn {
+            background-color: #006A71;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 80px;
+            display: inline-block;
+            transition: background-color 0.2s ease;
+        }
+
+        .big-download-btn:hover {
+            background-color: #00838b;
+        }
+
+        .app-stores {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .app-store-placeholder img{
+            height: 60px;
+            width: auto;
+        }
+
+        /* Contact Section */
+        #contact-boxes {
+            padding: 60px 20px;
+            background-color: #f3f3f3;
+            text-align: center;
+        }
+
+        #contact-boxes h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #006A71;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 3px 5px 15px rgba(0, 106, 113, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-box h2 {
+            color: #006A71;
+            margin: auto;
+        }
+
+        .contact-box p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .contact-box a {
+            color: #0f3c3f;
+            font-weight: bold;
+            font-size: larger;
+            text-decoration:none ;
+            transition: color 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            color: #00838b;
+            text-decoration: underline;
+        }
+
+        .contact-box iframe {
+            border-radius: 8px;
+            margin-top: 15px;
+            width: 100%;
+            height: 200px;
+        }
+
+        .contact-box img {
+            margin-bottom: 15px;
+            max-width: 50px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #006A71;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* NEW STYLES FOR REVIEWS SECTION */
+        .reviews-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+
+        /* NEW STYLES FOR DETAILS SECTION */
+        .details-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1000px;
+            margin-top: 40px;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .detail-card h3 {
+            color: #006A71;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .detail-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .detail-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        /* MOBILE STYLES */
+ @media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .logo {
+        margin-bottom: 10px;
+        max-width: 70px;
+        height: auto;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .nav-item {
+        margin: 5px 2px; /* Reduced margin for small screens */
+    }
+    
+    .nav-link {
+        padding: 5px 8px; /* Smaller padding */
+        font-size:15px; /* Smaller font */
+    }
+            
+            #home {
+                text-align: center;
+                padding: 40px 20px;
+            }
+            
+            #home a, #home p, #hero-text, #home h2 {
+                margin-right: auto;
+                margin-left: auto;
+                text-align: center;
+            }
+            
+            .iphone {
+                margin: 30px auto;
+                position: relative;
+                max-width: 80%;
+                padding-bottom: 0;
+            }
+            
+            .about-info {
+                margin-right: auto;
+                text-align: center;
+                width: 100%;
+                padding: 0 20px;
+            }
+            
+            .about-info p {
+                text-align: center;
+                max-width: 100%;
+            }
+            
+            .about {
+                margin: 30px auto;
+                width: 80%;
+                max-width: 400px;
+                position: relative;
+            }
+            
+            .reviews-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .details-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            section {
+                padding: 40px 20px;
+            }
+            
+            #user-reviews div h1, #download h1, .about-info h1, .about-info h2 {
+                font-size: 40px;
+            }
+            
+            #hero-text, #home h2 {
+                margin-top: 20%;
+                font-size: 2rem;
+            }
+            
+            .about-info p, .user-box p, .contact-box p, .detail-card p {
+                font-size: 16px;
+            }
+            
+            .big-download-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+            
+            .app-store-placeholder img {
+                height: 40px;
+            }
+            
+            #download h1 {
+                padding-bottom: 40px;
+            }
+        }
